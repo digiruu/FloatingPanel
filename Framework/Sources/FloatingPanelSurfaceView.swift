@@ -94,7 +94,12 @@ public class FloatingPanelSurfaceView: UIView {
     /// content view.
     public let containerView: UIView = UIView()
 
-    @available(*, unavailable, renamed: "containerView")
+        @available(*, unavailable, renamed: "containerView")
+        public var oldContainerView: UIView {
+            get {
+                fatalError("oldContainerView is now unavailable, use containerView instead.")
+            }
+        }
     public var backgroundView: UIView!
 
     private lazy var containerViewTopConstraint = containerView.topAnchor.constraint(equalTo: topAnchor, constant: containerMargins.top)
